@@ -1,0 +1,19 @@
+Package: rmini
+Version: 0.0.0
+Date: 2012-03-19
+Title: A minimal functional R package
+Author: Yihui Xie
+Maintainer: Yihui Xie <xie@yihui.name>
+Depends:
+    R (>= 2.14.0)
+Imports:
+    tools
+Suggests:
+    ggplot2
+Description: This is a minimal R package shows you how to write R packages.
+License: GPL
+URL: https://github.com/yihui/r-ninja
+BugReports: https://github.com/yihui/r-ninja/issues
+Collate:
+    'reverse.R'
+    'zzz.R'
