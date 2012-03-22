@@ -14,13 +14,13 @@
   - 正则表达式
 1. OO特征
   - S3, S4, reference classes
-1. Webscrape
+1. 网络数据
   - download.files
   - XML
   - RCurl
-1. 社会网络分析
-  - 微博
-  - 人人
+  - 社会网络分析
+    - 微博
+    - 人人
 1. 统计模型
 1. 数据库
 1. 数据挖掘
@@ -32,6 +32,9 @@
   - Profiling
   - 单元测试
 1. Linux
+1. 版本控制
+  - GIT
+  - GitHub
 1. Web编程
   - rApache
   - Rserve
