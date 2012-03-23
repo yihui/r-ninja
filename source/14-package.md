@@ -20,7 +20,7 @@ R中其实自带了几个最简单的profiling工具，我们或多或少都接�
   * `utils::Rprof()` —— 针对CPU的简易profile工具
   * `utils::Rprofmem()` —— 针对内存的简易profile工具
 
-关于这些函数的使用，可以参看Ross Ihaka的说明[2]。与此同时, CRAN上[profr](http://cran.r-project.org/web/packages/profr/">)（Hadley Wickham）和[proftools](http://cran.r-project.org/web/packages/proftools/)（Luke Tierney）两个微型包均提供了可视化`Rprof()`函数输出结果的能力。但是，这类简单的profiling只将程序拆解了到了单个R运算的层次，没有提供更深一层，即profiling compiled code的功能。R原生支持这个特性，但需要在编译时对默认选项进行简单的修改[4]。
+关于这些函数的使用，可以参看Ross Ihaka的说明[2]。与此同时，CRAN上[profr](http://cran.r-project.org/web/packages/profr/">)（Hadley Wickham）和[proftools](http://cran.r-project.org/web/packages/proftools/)（Luke Tierney）两个微型包均提供了可视化`Rprof()`函数输出结果的能力。但是，这类简单的profiling只将程序拆解了到了单个R运算的层次，没有提供更深一层，即profiling compiled code的功能。R原生支持这个特性，但需要在编译时对默认选项进行简单的修改[4]。
 
 ### 安装Google Perftools
 
@@ -177,9 +177,9 @@ configure完成:
 
 输出结果中，每行对应着一个函数的统计：
 
-  * 第1, 2列是该函数的本地采样(不包括被该函数调用的函数中的采样次数)次数和比例；
+  * 第1、2列是该函数的本地采样(不包括被该函数调用的函数中的采样次数)次数和比例；
   * 第3列是该函数本地采样次数占当前所有已统计函数的采样次数之和的比例；
-  * 第4, 5列是该函数的累计采样次数(包括其调用的函数中的采样次数)和比例。
+  * 第4、5列是该函数的累计采样次数(包括其调用的函数中的采样次数)和比例。
 
 如果你的系统中安装了gnu-gv或evince，即可直接即刻显示一幅无码清晰大图（ps/pdf）：
 
@@ -217,7 +217,7 @@ pprof可将输出转化为强大的Valgrind工具集中的组件Callgrind可采�
 
 其实看上去KCachegrid就是做了一个最普通的树可视化。不过有了交互式图形的支持，进一步的分析就变得十分方便了，读者可以自己进一步体验。
 
-### 其他工具(sprof和oprofile)
+### 其他工具
 
 Writing R Extensions[6]提到另外两个可供Linux用户选择的工具：sprof和oprofile。感兴趣的同学不妨实践一下。
 
