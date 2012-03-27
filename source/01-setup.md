@@ -151,7 +151,7 @@ R_LIBS_USER="~/R"
 ### `.Rprofile`文件
 
 
-### PATH环境变量
+### `PATH`环境变量
 
 
 
