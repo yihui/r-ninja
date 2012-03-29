@@ -200,11 +200,12 @@ $ which R
 $ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
-当然,奇葩的make -j8可以不用安装(sudo make install)就能使用R,你只要在`~/.bashrc`后面加上
+当然,奇葩的make -j8可以不用安装(sudo make install)就能使用R,你只要在`~/.bashrc`后面加上PATH就可以了. 更改`YOU_R_PATH_Directory`为你的R目录,复制如下内容到你的Terminal中:
 
 ```bash
-vim ~/.bashrc
+cat >>~/.bashrc<<EOF
 export PATH='YOU_R_PATH_Directory':$PATH
+EOF
 ```
 
 把R的bin路径添加到PATH中之后，可以在命令行窗口中测试一下是否能调用R：
@@ -233,7 +234,7 @@ Rscript foobar.R
 
 至于CLI下的参数调用,假设R脚本是demo.r
 
-```bash
+```r
 Args <- commandArgs(TRUE)
 cat('\n Input is:    ',as.double(Args[1]),'\n')
 ```
@@ -251,6 +252,16 @@ bash-3.2$ Rscript demo.r 100
 
  Input is:     100 
 ```
+
+注:Linux/Mac下,原则上你可以使用不同版本的R,比如有个版本是自编译的,在`/home/yourname/R/bin`下面,可以使用bash的alias功能调用不同的R, 复制如下代码到terminal中:
+
+```bash
+cat >>~/.bashrc<<EOF
+alias R2='/home/yourname/R/bin/R --no-save'
+EOF
+```
+
+关闭terminal再进入,执行`R2`就能使用`/home/yourname/R/bin`版本的R.这个技巧对服务器用户比较有用,尤其是当用户没有sudo权限安装R到`/usr/bin`目录下.
 
 关于R作为命令行工具的更多用法，参见：
 
@@ -279,6 +290,18 @@ font = TT DejaVu Sans Mono
 ```
 language = en
 ```
+
+Mac下需手动修改Renviron文件,比如对于X64的R,修改为
+
+```bash
+sudo cat >>/Library/Frameworks/R.framework/Resources/etc/x86_64/Renviron<<EOF
+#LANGUAGE
+LANGUAGE=en
+EOF
+```
+
+Linux对应的Renviron文件位置一般在`/usr/library/R/etc`或者`/usr/lib/R/etc`之类的位置(也有可能在`/usr/local/lib/R/etc`).
+
 
 修改语言的一个重要原因是R的中文翻译尚欠缺火候，即使是很熟悉R的人，有时也未必能看懂中文错误消息。希望国内有热心志愿者能在这方面做出更多贡献，翻译小组的文件库位于：<https://github.com/r-cn/r-cntrans>。不过忍者必须熟悉英文，仅仅靠翻译的文字很难走远。
 
