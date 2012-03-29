@@ -60,8 +60,8 @@ sudo apt-get install r-base-dev
 对传统或高级Linux用户来说，装任何软件都还有一套古老的办法，那就是用伟大的`make`命令从源代码自行编译，很有黑客范儿。大致步骤很简单：从网上下载软件的源代码，通常是一个`*.tar.gz`压缩文件，解压缩，然后在终端中切换目录到解压缩文件夹下，运行：
 
 ```bash
-./configure
-make
+./configure --enable-R-shlib --with-x
+make -j8
 sudo make install
 ```
 
@@ -75,7 +75,7 @@ sudo apt-get build-dep r-base-dev
 
 那些Linux软件仓库里放的软件实际上也是通过`make`的方式从源文件一步步编译出来的，只不过是服务器上预先编译好了，省去了用户自行编译和解决依赖的麻烦，直接就可以装编好的二进制包。
 
-最后是Mac OS，我没什么经验，不多说，好像就是一个文件下载下来打开就可以用，我不太理解Mac系统管理程序文件的方式。
+最后是Mac OS，同样可以使用编译方式(不含GUI).　或者,简答的使用　http://cran.r-project.org/bin/macosx/　提供的PKG包,32/64/Intel/PPC 版本都包含了GUI. 唯一需要注意的是OS的版本.
 
 ### R附加包
 
