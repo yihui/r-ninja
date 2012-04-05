@@ -1,0 +1,52 @@
+#!/usr/bin/Rscript
+
+## ./knit [epub|github|html|pdf] to generate different types of output
+
+library(knitr)
+
+## use a custom pattern list: begin by ``` {r code begin} and end by ````; `ri
+## [inline code] ir`; `ro [global options] or`
+pat_gfm()
+
+## use GFM as the output format: R code in ```r and ``` (both GitHub and pandoc
+## recognize it)
+render_gfm()
+
+## global chunk options: use high quality Cairo PNG device
+pdf.options(pointsize = 10)  # smaller pointsize for recording plots
+opts_chunk$set(cache=TRUE, fig.path='figure/', dev='Cairo_png',
+  fig.width=5, fig.height=5, cache.path = 'cache-local/', par=TRUE)
+## xtable options (generate HTML by default)
+options(xtable.type = 'html', xtable.html.table.attributes = '', table.placement = '')
+
+## chunk hooks
+knit_hooks$set(par=function(before, options, envir){
+  if (before && options$fig.show!='none') 
+    par(mar=c(4,4,.1,.1), cex.lab=.95, cex.axis=.9, mgp=c(2,.7,0), tcl=-.3)
+})
+
+local({
+  fmt = commandArgs(TRUE)
+  if (length(fmt) == 0L) fmt = 'epub'
+  if (fmt %in% c('github', 'html')) {
+    # upload to Imgur when output is for github or html
+    opts_knit$set(upload.fun = imgur_upload)
+    opts_chunk$set(cache.path = 'cache-upload/')
+  } else if (fmt == 'pdf') {
+    options(xtable.type = 'latex')
+    opts_chunk$set(cache.path = 'cache-pdf/')
+    # use high quality tikz graphics for PDF output
+    opts_chunk$set(dev = 'tikz', fig.width=4, fig.height=4)
+    x = readLines('template.tex')
+    options(tikzDocumentDeclaration = x[1], tikzDefaultEngine = 'xetex')
+    assign('tikzPackages', c(x[2:13], '\n'), envir = knitr:::.knitEnv)
+  }
+  
+  # knit all md files under ./source
+  for (f in list.files('./source/', full.names = TRUE)) {
+    knit(f, output = basename(f))
+  }
+})
+
+## convert to an ebook (EPUB) or other formats
+source('mdconvert.sh')
