@@ -4,27 +4,27 @@
 
 > 颐和园在我家北面，假如没有北这个方向的话，我就只好向南走，越过南极和北极，行程四万余公里到达那里。
 > 
-> —— 王小波，《革命时期的爱情》
+> —— 《革命时期的爱情》
 
 > 怎么做对是科学，怎么做好则是艺术；前者有判断真伪的法则，后者则没有；艺术的真谛就是要叫人感到好，甚至是完美无缺。
 > 
-> —— 王小波，《用一生来学习艺术》
+> —— 《用一生来学习艺术》
 
 ### 剖析与Profiling
 
-要提高R程序的运行速度，不仅仅需要剽悍的机器（单核高频、多核并行、GPU计算）和高效的代码（向量化、混合编程），寻找程序中的性能瓶颈并进行有针对的优化也是很重要的。“找到北这个方向”，就是profiling的意义所在。当然，找到优化的方向只是第一步，最终能够实现多大幅度的优化，则更多地属于艺术的范畴。
+要提高R程序的运行速度，不仅仅需要剽悍的机器（单核高频、多核并行、GPU计算）和高效的代码（向量化、混合编程），寻找程序中的性能瓶颈并进行有针对的优化也是很重要的。“找得着北”就是profiling的意义所在。当然，找到优化的方向只是第一步，最终能够实现多少优化，则属于艺术的范畴。
 
 R中其实自带了几个最简单的profiling工具，我们或多或少都接触过：
 
   * `base::system.time()` —— 简陋的计时秒表
-  * `utils::Rprof()` —— 针对CPU的简易profile工具
-  * `utils::Rprofmem()` —— 针对内存的简易profile工具
+  * `utils::Rprof()` —— 针对CPU的简易profiling工具
+  * `utils::Rprofmem()` —— 针对内存的简易profiling工具
 
 关于这些函数的使用，可以参看Ross Ihaka的说明[2]。与此同时，CRAN上[profr](http://cran.r-project.org/web/packages/profr/">)（Hadley Wickham）和[proftools](http://cran.r-project.org/web/packages/proftools/)（Luke Tierney）两个微型包均提供了可视化`Rprof()`函数输出结果的能力。但是，这类简单的profiling只将程序拆解了到了单个R运算的层次，没有提供更深一层，即profiling compiled code的功能。R原生支持这个特性，但需要在编译时对默认选项进行简单的修改[4]。
 
 ### 安装Google Perftools
 
-由Google员工开发的Google Perftools可以profiling compiled code。配合kcachegrind，还可以将结果进行可视化。
+由Google员工开发的Google Perftools可以profiling compiled code。配合kcachegrind，还可以对结果进行可视化。
 
 测试环境: Arch Linux x86_64
 
@@ -127,7 +127,7 @@ configure完成:
         chmod 755 profiling.R
         CPUPROFILE=rprof.out ./profiling.R
 
-这里在写R文件时用了一点点技巧，使得它能够支持类Unix系统的Shebang特性而直接执行，参考[7]、[8]。
+这里在写R文件时用了一点技巧，使得它能够支持类Unix系统的Shebang特性而直接执行，参考[7]、[8]。
 
 执行完毕后，我们即可使用pprof来分析输出的结果文件（一个二进制文件！）了。pprof可以将此文件解析成你想要的各种可读的形式。其参数如下：
 
@@ -219,7 +219,7 @@ pprof可将输出转化为强大的Valgrind工具集中的组件Callgrind可采�
 
 ### 其他工具
 
-Writing R Extensions[6]提到另外两个可供Linux用户选择的工具：sprof和oprofile。感兴趣的同学不妨实践一下。
+Writing R Extensions[6]提到另外两个可供Linux用户选择的工具：sprof和oprofile。感兴趣的读者不妨实践一下。
 
 ### 参考
 
