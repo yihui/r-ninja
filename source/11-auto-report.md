@@ -215,7 +215,7 @@ print('hello world!')
 
 ``` {r knitr-lyx, eval=FALSE}
 system.file('examples', package = 'knitr')
-```
+````
 
 注意**knitr**的支持从LyX 2.0.3才开始，所以如果你用的是更旧的版本的话，会无法打开这些例子。
 
