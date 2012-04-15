@@ -24,7 +24,7 @@ Windows中安装R注意几点：
 
 ![去掉安装目录中的版本号目录](http://i.imgur.com/5ZVXx.png)
 
-![R 2.15.0的安装界面（可选32位或64位的R）](http://i.imgur.com/cbw4T.png)
+![R 2.15.0的安装界面（可选32位或64位的R）](http://i.imgur.com/eI0sM.png)
 
 ![R 2.15.0以前可以选择不安装消息翻译文件](http://i.imgur.com/kOphm.png)
 
