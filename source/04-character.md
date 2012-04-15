@@ -128,7 +128,7 @@ sub('<title>|</title>', '', xie[5])
 
 下面的例子来自于<http://cos.name/cn/topic/104126/>，其实是个没事找抽的例子，但可以说明字符集的基本用法。我们的任务是从几行字符串中提取R包的名字（包名由所有大小写字母、数字和点构成），先上代码：
 
-``` {r extract-packages, comment=NA}
+``` {r extract-packages}
 pkgs = readLines('04-package-names.txt')
 str(pkgs)
 cat(pkgs, sep = '\n') # 原始文本
