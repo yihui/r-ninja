@@ -4,14 +4,6 @@
 
 library(knitr)
 
-## use a custom pattern list: begin by ``` {r code begin} and end by ````; `ri
-## [inline code] ir`; `ro [global options] or`
-pat_gfm()
-
-## use GFM as the output format: R code in ```r and ``` (both GitHub and pandoc
-## recognize it)
-render_gfm()
-
 ## global chunk options: use high quality Cairo PNG device
 pdf.options(pointsize = 10)  # smaller pointsize for recording plots
 opts_chunk$set(cache=TRUE, fig.path='figure/', dev='Cairo_png',
