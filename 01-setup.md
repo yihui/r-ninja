@@ -24,7 +24,7 @@ Windows中安装R注意几点：
 
 ![去掉安装目录中的版本号目录](http://i.imgur.com/5ZVXx.png)
 
-![R 2.15.0的安装界面（可选32位或64位的R）](http://i.imgur.com/cbw4T.png)
+![R 2.15.0的安装界面（可选32位或64位的R）](http://i.imgur.com/eI0sM.png)
 
 ![R 2.15.0以前可以选择不安装消息翻译文件](http://i.imgur.com/kOphm.png)
 
@@ -77,7 +77,7 @@ sudo apt-get build-dep r-base-dev
 
 那些Linux软件仓库里放的软件实际上也是通过`make`的方式从源文件一步步编译出来的，只不过是服务器上预先编译好了，省去了用户自行编译和解决依赖的麻烦，直接就可以装编好的二进制包。
 
-最后是Mac OS，我不熟，以下指导来自杨一帆：同样可以使用编译安装（此时不含GUI，但是Mac预先包含的ATLAS库函数明显优于R自带的BLAS；或者简单地使用<http://cran.r-project.org/bin/macosx/>提供的PKG包，32/64/Intel/PPC版本都包含了GUI。唯一需要注意的是系统的版本，10.4以下的会有各种问题。另外的囧问题就是Mac首次加载绘图窗口会非常慢，等待画图的时候可以泡杯茶等带X11窗口出现。
+最后是Mac OS，我不熟，以下指导来自杨一帆：同样可以使用编译安装（此时不含GUI，但是Mac预先包含的ATLAS库函数明显优于R自带的BLAS；或者简单地使用<http://cran.r-project.org/bin/macosx/>提供的PKG包，32/64/Intel/PPC版本都包含了GUI。唯一需要注意的是系统的版本，10.4以下的会有各种问题。
 
 ### R附加包
 

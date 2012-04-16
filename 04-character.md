@@ -348,7 +348,7 @@ str(pkgs)
 
 
 ```
- chr [1:7] "[1] \"base\" \"boot\" \"class\" \"cluster\" \"codetools\"" ...
+##  chr [1:7] "[1] \"base\" \"boot\" \"class\" \"cluster\" \"codetools\"" ...
 ```
 
 
@@ -360,13 +360,13 @@ cat(pkgs, sep = "\n")  # 原始文本
 
 
 ```
-[1] "base" "boot" "class" "cluster" "codetools"
-[6] "compiler" "datasets" "fdrtool" "foreign" "graphics"
-[11] "grDevices" "grid" "KernSmooth" "lattice" "MASS"
-[16] "Matrix" "methods" "mgcv" "monreg" "nlme"
-[21] "nnet" "parallel" "rpart" "spatial" "splines"
-[26] "stats" "stats4" "survival" "tcltk" "tools"
-[31] "utils" 
+## [1] "base" "boot" "class" "cluster" "codetools"
+## [6] "compiler" "datasets" "fdrtool" "foreign" "graphics"
+## [11] "grDevices" "grid" "KernSmooth" "lattice" "MASS"
+## [16] "Matrix" "methods" "mgcv" "monreg" "nlme"
+## [21] "nnet" "parallel" "rpart" "spatial" "splines"
+## [26] "stats" "stats4" "survival" "tcltk" "tools"
+## [31] "utils" 
 ```
 
 
@@ -380,7 +380,7 @@ str(pkgs)  # 31个包名，搞定了
 
 
 ```
- chr [1:31] "base" "boot" "class" "cluster" "codetools" ...
+##  chr [1:31] "base" "boot" "class" "cluster" "codetools" ...
 ```
 
 
