@@ -43,7 +43,7 @@ Sweave的诞生也跟TeX绑在一起，这就为它后来的应用埋下了悲�
 1 + 2
 dnorm(0) # 标准正态分布在0处的密度值
 summary(lm(dist ~ speed, data=cars)) # 一个回归
-````
+```
 
 上面你看到的是R的输出，其实它的源文件只有5行，1行标记代码开始，3行R代码，1行标记正文开始，如下所示：
 
@@ -51,7 +51,7 @@ summary(lm(dist ~ speed, data=cars)) # 一个回归
     1 + 2
     dnorm(0) # 标准正态分布在0处的密度值
     summary(lm(dist ~ speed, data=cars)) # 一个回归
-    ````
+    ```
 
 我们用**knitr**编译这段代码，就得到了上面的输出。现在，你应该对自动化报告有一个初步了解了。**Knitr**的网站（<http://yihui.name/knitr>）中有详尽的英文文档和示例，英文方面没有障碍的忍者可以随时查阅。为了新忍入门更快，我在这里把整个故事的梗概叙述一遍，掌握了基本概念之后，再去网站里查阅细节会更容易。
 
@@ -94,13 +94,13 @@ MD文档语法为：以三个反引号和一对大括号开始R代码，以四�
 # 不重排代码：tidy=FALSE, warning=TRUE
 fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 1:3+1:2
-````
+```
 
 ``` {r ktext-ex2, tidy=TRUE, warning=FALSE}
 # 重排代码并隐藏警告信息：warning=FALSE
 fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 1:3+1:2
-````
+```
 
 默认情况下，文本输出会被加上前缀`##`，这是考虑到读者可能会复制文中的代码在自己的R中运行，而`#`是R的注释符，所以输出不会干扰代码的复制和粘贴运行。Sweave没有这个考虑，并且更糟糕的是它给源代码也加上了前缀`>`和`+`，这样看报告的人想要复制代码就痛苦之极了，因为你必须把这些多余的字符去掉。
 
@@ -109,7 +109,7 @@ fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 ``` {r ktable-ex, results='asis'}
 library(xtable)
 xtable(head(mtcars[, 1:5]))
-````
+```
 
 原样输出（`results='asis'`）的含义是这样：默认情况下，输出会被装饰在一些特定的标签内，例如在LaTeX格式输出时，普通文本被放在`verbatim`环境中；有时候我们希望用R代码直接输出特定格式的文本，比如直接写TeX代码，那么我们可以用`cat()`函数直接写文本，此时我们希望写出来的文本就直接是TeX代码，而不要被放到`verbatim`环境中（否则几乎任何TeX代码都会被当作普通文本在TeX中原样输出，TeX的`verbatim`环境你懂的）。例如在一个原样输出的代码段中，我们可以用
 
@@ -153,7 +153,7 @@ knit_hooks$set(par = function(before, options, envir) {
   # 运行代码前先设置图形边距参数
   if (before) par(mar = c(4, 4, .1, .1))
 })
-````
+```
 
 代码段钩子有固定的格式，它是一个有三个参数的函数，其中`before`是逻辑值，表示这个钩子在代码段之前执行（`TRUE`）还是之后执行（`FALSE`），`options`是一个列表，装有所有当前代码段的选项，`envir`是一个环境对象，是当前代码段执行的环境。代码段钩子设置好之后，每当一个代码段被运行前后，**knitr**都会检查这个代码段是否有一个跟钩子函数**同名**的选项，如果有且非空，那么就会运行钩子函数。
 
@@ -213,7 +213,7 @@ print('hello world!')
 
 ``` {r knitr-lyx, eval=FALSE}
 system.file('examples', package = 'knitr')
-````
+```
 
 注意**knitr**的支持从LyX 2.0.3才开始，所以如果你用的是更旧的版本的话，会无法打开这些例子。
 
