@@ -72,7 +72,19 @@ LaTeX文档（扩展名`Rnw`）里面仍然沿用历史规定，代码放在`<<>
 
 HTML文档混合R代码的语法为：以`<!--begin.rcode label, opt=value`开始R代码，以`end.rcode-->`开始正文。全局选项放在`<!--roptions -->`中，行内代码放在`r paste('<!--', 'rinline -->', sep = '')`中。熟悉HTML语法的都知道，`<!-- -->`是HTML注释的语法。我对Sweave语法不太满意的一点也在此：文学化编程的文档最好能避免破坏原文档的语法，比如要是我来设计Sweave，我肯定不会用`<<>>=`语法，因为它干扰了TeX文档，我会倾向于把R代码段放在TeX注释中，这样即使不编译，这份文档也是合法的TeX文档。以下是一个简单的HTML例子：
 
+    hello, the value of 2 * pi is `r I(paste('<!--', 'rinline 2*pi -->', sep = ''))`
+    
+    <!--begin.rcode foo-label
+    rnorm(5)
+    end.rcode-->
+
 MD文档语法为：以三个反引号和一对大括号开始R代码，以三个反引号开始正文，上面的hello world例子已经显示了代码段的基本结构。行内代码放在`` `r ` ``之中，全局选项在`` `ro or` ``中（R options）。以下是一个简单的MD例子：
+
+    hello, the value of 2 * pi is `r I(paste('\x60', 'r 2*pi', '\x60', sep = ''))`
+    
+    ``` {r foo-label}
+    rnorm(5)
+    ```
 
 ### 文本输出
 
