@@ -37,7 +37,7 @@ Sweave的诞生也跟TeX绑在一起，这就为它后来的应用埋下了悲�
 
 你要是没学习过Sweave，最好别去花那时间，可以直接跳入**knitr**世界，它兼容Sweave并提供了无限的扩展性，这本书就是用它基于Markdown写的。先举一个hello world例子吧：
 
-``` {r knitr-hello}
+```{r knitr-hello}
 1 + 2
 dnorm(0) # 标准正态分布在0处的密度值
 summary(lm(dist ~ speed, data=cars)) # 一个回归
@@ -100,13 +100,13 @@ MD文档语法为：以三个反引号和一对大括号开始R代码，以三�
 
 简单举两个例子，注意它们的源代码完全相同，但因为代码段选项不同，所以输出也有所不同：
 
-``` {r ktext-ex1, tidy=FALSE, warning=TRUE}
+```{r ktext-ex1, tidy=FALSE, warning=TRUE}
 # 不重排代码：tidy=FALSE, warning=TRUE
 fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 1:3+1:2
 ```
 
-``` {r ktext-ex2, tidy=TRUE, warning=FALSE}
+```{r ktext-ex2, tidy=TRUE, warning=FALSE}
 # 重排代码并隐藏警告信息：warning=FALSE
 fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 1:3+1:2
@@ -116,7 +116,7 @@ fib=function(n){if(n<2)return(n);fib(n-1)+fib(n-2)}
 
 表格实际上也是纯文本构成的（你要是天天抱着Word用当然永远都不能明白这句话！），但R没有自带的表格生成函数，所以我们往往需要特殊处理。视输出格式不同，我们可以使用**xtable**或**ascii**包来把R对象（尤其是数据框）转化为相应格式的表格代码，此时需要我们使用原样输出，如：
 
-``` {r ktable-ex, results='asis'}
+```{r ktable-ex, results='asis'}
 library(xtable)
 xtable(head(mtcars[, 1:5]))
 ```
@@ -158,7 +158,7 @@ cat('\\includegraphics{foobar}')
 
 代码段钩子对应着自定义的代码段选项，也就是所有默认选项之外的选项，注意**knitr**的代码段选项名称没有限制，你可以写任意合法取值的选项。代码段钩子函数可以通过`knit_hooks`对象设定。下面举个例子说明新选项和钩子函数如何关联。我们先构造一个新钩子函数叫`par`：
 
-``` {r knit-hook-ex, eval=FALSE}
+```{r knit-hook-ex, eval=FALSE}
 knit_hooks$set(par = function(before, options, envir) {
   # 运行代码前先设置图形边距参数
   if (before) par(mar = c(4, 4, .1, .1))
@@ -215,7 +215,7 @@ knit_hooks$set(par = function(before, options, envir) {
 
 事实上**knitr**包的大多数PDF手册都是用LyX写的，读者可以在这里找到它们：
 
-``` {r knitr-lyx, eval=FALSE}
+```{r knitr-lyx, eval=FALSE}
 system.file('examples', package = 'knitr')
 ```
 
