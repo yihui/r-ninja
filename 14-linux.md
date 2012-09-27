@@ -215,7 +215,59 @@ nl [文件]
 
 #### head
 
+将文件前几行输出
+
+语法
+
+head [文件]
+
+```
+~$ head file
+one
+two
+three
+```
+
+> 默认输出前10行，所以没有显示head作用。
+
+参数
+
+-n [数字] 前[数字]行输出
+
+```
+~$ head -n 2 file
+one
+two
+```
+
 ####tail
+
+输出文件后几行
+
+语法
+
+tail [文件]
+
+```
+~$ tail file
+one
+two
+three
+```
+
+> 默认输出后10行，所以没有展示出tail的作用。
+
+参数
+
+-n [数字] 输出
+
+```
+~$ tail -n 2 file
+two
+three
+```
+
+> 输出文件最后2行的内容
 
 ### 搜索相关
 
