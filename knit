@@ -9,7 +9,8 @@ pdf.options(pointsize = 10)  # smaller pointsize for recording plots
 opts_chunk$set(cache=TRUE, cache.path = 'cache-local/',
                fig.width=5, fig.height=5, par=TRUE)
 ## xtable options (generate HTML by default)
-options(xtable.type = 'html', xtable.html.table.attributes = '', table.placement = '')
+options(xtable.type = 'html', xtable.html.table.attributes = '',
+        table.placement = '', xtable.comment = FALSE)
 
 ## chunk hooks
 knit_hooks$set(par=function(before, options, envir){
