@@ -72,10 +72,10 @@ summary(lm(dist ~ speed, data = cars))  # 一个回归
 ## (Intercept)  -17.579      6.758   -2.60    0.012 *  
 ## speed          3.932      0.416    9.46  1.5e-12 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 15.4 on 48 degrees of freedom
-## Multiple R-squared: 0.651,	Adjusted R-squared: 0.644 
+## Multiple R-squared:  0.651,	Adjusted R-squared:  0.644 
 ## F-statistic: 89.6 on 1 and 48 DF,  p-value: 1.49e-12
 ```
 
@@ -193,8 +193,6 @@ library(xtable)
 xtable(head(mtcars[, 1:5]))
 ```
 
-<!-- html table generated in R 2.15.1 by xtable 1.7-0 package -->
-<!-- Thu Aug 23 01:47:04 2012 -->
 <TABLE >
 <TR> <TH>  </TH> <TH> mpg </TH> <TH> cyl </TH> <TH> disp </TH> <TH> hp </TH> <TH> drat </TH>  </TR>
   <TR> <TD align="right"> Mazda RX4 </TD> <TD align="right"> 21.00 </TD> <TD align="right"> 6.00 </TD> <TD align="right"> 160.00 </TD> <TD align="right"> 110.00 </TD> <TD align="right"> 3.90 </TD> </TR>
