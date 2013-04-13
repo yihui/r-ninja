@@ -6,8 +6,8 @@ library(knitr)
 
 ## global chunk options: use high quality Cairo PNG device
 pdf.options(pointsize = 10)  # smaller pointsize for recording plots
-opts_chunk$set(cache=TRUE, fig.path='figure/', dev='Cairo_png',
-  fig.width=5, fig.height=5, cache.path = 'cache-local/', par=TRUE)
+opts_chunk$set(cache=TRUE, cache.path = 'cache-local/',
+               fig.width=5, fig.height=5, par=TRUE)
 ## xtable options (generate HTML by default)
 options(xtable.type = 'html', xtable.html.table.attributes = '', table.placement = '')
 
