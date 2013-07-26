@@ -57,6 +57,17 @@ sudo apt-get update
 sudo apt-get install r-base-dev
 ```
 
+然而真正的忍者怎么能去看图文教程装软件呢？他从来都需要追求纯命令行搞定一切，否则让你装1台机器你点了n下鼠标，让你装30台机器你就得点`30 * n`次鼠标，从此你的生活就是，睡觉从不自然醒，不数钱手也抽筋。添加软件仓库根本用不着去想什么`/etc/apt/sources.list`或者点什么菜单按钮，下面是真正的忍者安装R的方式：
+
+```bash
+sudo apt-add-repository -y "deb http://cran.rstudio.com/bin/linux/ubuntu `lsb_release -cs`/"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+sudo apt-get update
+sudo apt-get install r-base-dev
+```
+
+命令`apt-add-repository`用来添加仓库，`-y`选项表示“问，问毛线问，给我装就是了”，`lsb_release -cs`用来获得当前Ubuntu的版本名称，如`precise`/`raring`之类的（忍者从不把变量写死，能动态获得的东西都动态获得）。下面`apt-key`添加钥匙，接下来的事情前面都已经讲过了。
+
 装完之后基本上就没什么维护的事儿了，因为Ubuntu会定期提醒你软件仓库中什么软件出了新版本，如果你需要更新，只是点一下OK的事情，不像Windows下得手工卸载、下载、安装。唯一可能需要改动的是，如果将来Ubuntu自身的版本升级了，比如从oneiric升级到precise版本，那么上面的软件库地址里的相应版本也需要手工更新。
 
 对传统或高级Linux用户来说，装任何软件都还有一套古老的办法，那就是用伟大的`make`命令从源代码自行编译，很有黑客范儿。大致步骤很简单：从网上下载软件的源代码，通常是一个`*.tar.gz`压缩文件，解压缩，然后在终端中切换目录到解压缩文件夹下，运行：
