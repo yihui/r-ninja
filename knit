@@ -36,7 +36,7 @@ local({
   }
   
   # knit all md files under ./source
-  for (f in list.files('./source/', '\\.md$', full.names = TRUE)) {
+  for (f in list.files('./', '\\.Rmd$', full.names = TRUE)) {
     unlink(basename(f))
     knit(f, output = basename(f))
     # make sure you do not do stupid things (edit output instead of source)
