@@ -1,5 +1,4 @@
-*.tar.gz
-figure/
-cache-*
-
 .Rproj.user
+_book
+rsconnect
+packages.bib
