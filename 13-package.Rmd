@@ -1,4 +1,4 @@
-# 编写R包
+# 编写R包 {#r-package}
 
 我们不介绍官方的编写方法，因为它需要太多的人力。我们的观点是能自动化的全都自动化（凡是需要记忆的都是将来出错的隐患），本章基于一个范例R包**rmimi**：<https://github.com/yihui/rmini>。尽管我们不推崇官方的办法，但还是需要说明一下，官方手册是“[Writing R Extensions](http://cran.r-project.org/doc/manuals/R-exts.html)”，它涵盖了所有编写R包的细节和规则，忍者可能需要时不时参考一下，但通常不需要通读。继续阅读之前，请用GIT将**rmini**包克隆到本地：
 
