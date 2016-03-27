@@ -46,3 +46,6 @@ pre {
 pre code {
   white-space: inherit;
 }
+h4.author {
+  display: inline;
+}
