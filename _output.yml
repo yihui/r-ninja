@@ -1,6 +1,9 @@
 bookdown::gitbook:
   css: css/style.css
   config:
+    sharing:
+      facebook: no
+      weibo: yes
     toc:
       collapse: subsection
       before: |
