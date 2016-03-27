@@ -216,7 +216,7 @@ knit_hooks$set(par = function(before, options, envir) {
 
 显然，后来这个故事有了新发展，随着我对Sweave的日益不满，我写完**knitr**包之后也顺便给LyX新增了一个knitr模块。在LyX文档设置中，选入这个模块，在编译的时候LyX会先调用R和**knitr**包处理文档，再交回给LyX去编译为PDF。
 
-![LyX中的knitr模块](http://i.imgur.com/jEKSh.png)
+![LyX中的knitr模块](https://i.imgur.com/jEKSh.png)
 
 在LyX中输入R代码可以用快捷键`Ctrl + L`，然后按前面介绍的LaTeX类语法写（为什么是LaTeX语法？）：
 
@@ -238,9 +238,9 @@ RStudio没有LyX那样的可视化界面，但它作为R世界的编辑器后起
 
 RStudio本来是一个R代码编辑器，它的界面有足够的现代风，而且这个界面竟然同时有桌面版和服务器版，后者的出现着实让人吃惊了一番，想一下，在某个云端运行着RStudio，你可以通过浏览器直接在里面使用R，只要服务器不关机，这个R永不掉线。
 
-![RStudio的选项配置界面](http://i.imgur.com/Z72Qc.png)
+![RStudio的选项配置界面](https://i.imgur.com/Z72Qc.png)
 
-![RStudio中的Rnw文档，点Compile PDF按钮就可以一键生成PDF](http://i.imgur.com/SGsbj.png)
+![RStudio中的Rnw文档，点Compile PDF按钮就可以一键生成PDF](https://i.imgur.com/SGsbj.png)
 
 刚开始的时候，RStudio支持一键通过**knitr**生成PDF，只要RStudio的选项配置中选的是**knitr**（你也可以选Sweave作为编译引擎，我就当你是要怀旧好了），并且你的R里面已经安装了**knitr**包。后来我们发现Sweave其实十多年前就提出了一个有用的概念，但这么多年都没有真正实现过，就是Rnw文档与PDF文档的同步。高级LaTeX用户知道，在LaTeX世界里有tex文件和PDF同步的可能，很多编辑器也支持这种同步，就是可以从tex源文件的某个位置直接跳到PDF文档中相应的页上，反之也可以跳回来，这种导航对查错和对比检查非常有用。对Rnw文档来说，支持这种同步导航就差那么一步，原因是Rnw被编译为tex文档时，两个文档的行号不一定能完全对应，比如Rnw中5行源代码可能会生成20行tex输出，这样两个文档的行号就错开了，即使tex文档支持同步导航，从Rnw跳到PDF或跳回来就跳不准了。Sweave提出了一个叫`concordance`的选项，用来记录Rnw和tex文件的行号差异，但具体怎么实现导航，就被遗忘在滚滚红尘中了。RStudio把这个旧摊子捡起来，拍拍土，重新开张了，不仅实现了Rnw和PDF之间互跳（Ctrl + 单击），而且实现了错误行号导航，如果编译出错，你可以直接知道是哪段代码出错了。RStudio也实现了代码段选项的自动补全，让文档写起来更快。
 
