@@ -1,0 +1,24 @@
+bookdown::gitbook:
+  css: css/style.css
+  config:
+    toc:
+      collapse: subsection
+      before: |
+        <li><a href="./">R语言忍者秘笈</a></li>
+      after: |
+        <li><a href="https://github.com/yihui/r-ninja" target="blank">Github源文档库</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">本书基于bookdown编写</a></li>
+    edit:
+      link: https://github.com/yihui/r-ninja/edit/master/%s
+      text: "编辑"
+bookdown::html_book:
+  css: [css/style.css, css/toc.css]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  keep_tex: yes
+  latex_engine: xelatex
+  citation_package: natbib
+  base_format: rticles::ctex
+bookdown::epub_book:
+  stylesheet: css/style.css

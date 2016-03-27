@@ -1,11 +1,20 @@
 ---
 title: R语言忍者秘笈
-author: [谢益辉, 肖楠, 坑主三, 坑主四……]
-bibliography: book.bib
+author: [谢益辉, 肖楠, 坑主三, 坑主四]
+date: "`r Sys.Date()`"
+knit: "bookdown::render_book"
+documentclass: book
+bibliography: [packages.bib]
+biblio-style: apalike
+link-citations: yes
+site: true
+url: 'https\://bookdown.org/yihui/r-ninja/'
+github-repo: yihui/r-ninja
+cover-image: images/cover.jpg
 ---
 
 ```{r include=FALSE}
-options(digits = 4)
+options(digits = 4, htmltools.dir.version = FALSE)
 
 knitr::opts_chunk$set(par = TRUE)
 
@@ -28,7 +37,9 @@ R语言[@R-base]是由统计学家发明的一门程序语言，这个特殊的�
 
 总之，我们追求的是高效率的R应用，就像一名忍者，了解大局形势，也善于利用细节，飞檐走壁上天入地，准确而迅速地完成任务。
 
-## 术语说明 {#terms .unnumbered}
+![](images/cover.jpg)
+
+## 术语说明 {-}
 
 foobar
 :   没有特定含义，就是泛指一个对象或名称，有时候也拆开用，比如foo包bar函数，计算机领域常用语，当年这玩意儿可是让我疑惑了好久，究竟啥是foobar哩
