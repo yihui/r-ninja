@@ -14,8 +14,6 @@ bookdown::gitbook:
     edit:
       link: https://github.com/yihui/r-ninja/edit/master/%s
       text: "编辑"
-bookdown::html_book:
-  css: [css/style.css, css/toc.css]
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
