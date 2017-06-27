@@ -8,42 +8,42 @@
 
 1. 安装R
 1. 编辑器
-  - RStudio
-  - Emacs
+    - RStudio
+    - Emacs
 1. 数据结构
-  - 向量，向量化运算
+    - 向量，向量化运算
 1. 文本数据
-  - 编码问题
-  - 正则表达式
+    - 编码问题
+    - 正则表达式
 1. OO特征
-  - S3, S4, reference classes
+    - S3, S4, reference classes
 1. 图形
 1. 网络数据
-  - download.files
-  - XML
-  - RCurl
-  - 社会网络分析
-    - 微博
-    - 人人
+    - download.files
+    - XML
+    - RCurl
+    - 社会网络分析
+      - 微博
+      - 人人
 1. 统计模型
 1. 数据库
 1. 数据挖掘
 1. 自动化报告
 1. 高性能计算
 1. 程序包
-  - 嵌C代码
-  - 嵌Rcpp代码
-  - roxygen(2)写文档
-  - Profiling
-  - 单元测试
+    - 嵌C代码
+    - 嵌Rcpp代码
+    - roxygen(2)写文档
+    - Profiling
+    - 单元测试
 1. Linux
 1. 版本控制
-  - GIT
-  - GitHub
+    - GIT
+    - GitHub
 1. Web编程
-  - rApache
-  - Rserve
-  - Rook
+    - rApache
+    - Rserve
+    - Rook
 
 希望大家可以想一些更有创意的标题，比如圣斗士体，“死斗！显式循环炼狱之卷”，“集合！分布式与并行计算之卷”，或火影体，等等。
 
