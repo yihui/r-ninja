@@ -12,7 +12,7 @@ R的首页在<http://www.r-project.org>，你打开之后一定很失望，苍�
 
 如果你是中国用户，可以选一个国内的镜像。这里我们要特别感谢那些志愿提供服务器的单位对自由软件的支持，如厦门大学、中科院、中科大和北京交通大学等。咱们魏太云大版主对这些事情比较关心，国内要是出了新的镜像通常都是他率先报道（例<http://cos.name/cn/topic/106549>）。
 
-### R主程序{#R-core}
+### R主程序 {#r-base}
 
 先说Windows。要是能找到下载地址就去下，找不到的话，可爱的R core给做了一个自动重定向的网页：<http://cran.r-project.org/bin/windows/base/release.htm>，只要点这个链接，你就会下载最新版本的R，地址可以改为相应的本地镜像，如<http://ftp.ctex.org/mirrors/CRAN/bin/windows/base/release.htm>。各位忍者请务必研究这个页面的源代码，搞清楚为什么这个页面会让浏览器自动下载Windows版本的R安装程序。
 
@@ -97,7 +97,7 @@ brew install homebrew/science/r
 brew install caskroom/cask/rstudio
 ```
 
-### R附加包{#R-package}
+### R附加包 {#r-packages}
 
 整个R系统主要是由一系列程序包（Package）组成，第一次装完R可以运行`.packages(TRUE)`查看R自带的包名。除开这些主程序包之外，CRAN上还有数千附加包，由R核心开发团队之外的用户自行提交，这数量级基本上保证用R干啥的都有，所以上天入地飞檐走壁不成问题。
 
@@ -149,7 +149,7 @@ sudo apt-get install r-cran-xml
 
 R包与包之间就像Linux程序包一样也可能存在依赖关系，通常`install.packages()`会自动处理依赖，如果A包依赖于B包，那么装A的时候会自动装B（这例子没举好，我应该用A和C的），就像Ubuntu下`apt-get install`也能自动解决依赖一样。
 
-## 配置R
+## 配置R {#configure-r}
 
 软件选项多到底是好事还是坏事？我也不知道，总之R像其它开源软件一样，有无穷的选项可配置。对新手来说，这是地狱；对熟悉的用户来说，这也许是天堂吧。我们主要介绍两个配置文件，`.Renviron`和`.Rprofile`。这两个文件名看起来有点奇怪，怪在哪儿？它们只有扩展名，没有主文件名，平时我们看见的文件名似乎都是`foobar.doc`。在操作系统中有一个默认的规则，凡是以点开头的文件都是隐藏文件，而且通常都是配置文件。前面那句`list.files()`代码你要是运行过，可能就会发现很多以点开头的文件和文件夹。
 
