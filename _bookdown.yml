@@ -3,3 +3,4 @@ chapter_name: ["第", "章"]
 repo: https://github.com/yihui/r-ninja/
 output_dir: _book
 clean: [packages.bib, r-ninja.bbl]
+delete_merged_file: true
