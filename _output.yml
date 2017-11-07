@@ -9,8 +9,8 @@ bookdown::gitbook:
       before: |
         <li><a href="./">R语言忍者秘笈</a></li>
       after: |
-        <li><a href="https://github.com/yihui/r-ninja" target="blank">Github源文档库</a></li>
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">本书基于bookdown编写</a></li>
+        <li><a href="https://github.com/yihui/r-ninja" target="_blank">Github源文档库</a></li>
+        <li><a href="https://github.com/rstudio/bookdown" target="_blank">本书基于bookdown编写</a></li>
     edit:
       link: https://github.com/yihui/r-ninja/edit/master/%s
       text: "编辑"
