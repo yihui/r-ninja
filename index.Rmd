@@ -16,12 +16,13 @@ description: "本书要写什么其实我也不太清楚。迷迷瞪瞪中，感
 
 ```{r include=FALSE}
 options(digits = 4, htmltools.dir.version = FALSE)
+if (!knitr:::loadable('rmini')) devtools::install_github('yihui/rmini')
 
 knitr::opts_chunk$set(par = TRUE)
 
-knitr::knit_hooks$set(par=function(before, options, envir){
-  if (before && options$fig.show!='none')
-    par(mar=c(4,4,.1,.1), cex.lab=.95, cex.axis=.9, mgp=c(2,.7,0), tcl=-.3)
+knitr::knit_hooks$set(par = function(before, options, envir){
+  if (before && options$fig.show != 'none')
+    par(mar = c(4, 4, .1, .1), cex.lab = .95, cex.axis = .9, mgp = c(2, .7, 0), tcl = -.3)
 })
 ```
 
