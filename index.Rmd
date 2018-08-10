@@ -16,7 +16,7 @@ description: "本书要写什么其实我也不太清楚。迷迷瞪瞪中，感
 
 ```{r include=FALSE}
 options(digits = 4, htmltools.dir.version = FALSE)
-if (!knitr:::loadable('rmini')) devtools::install_github('yihui/rmini')
+if (!xfun::loadable('rmini')) devtools::install_github('yihui/rmini')
 
 knitr::opts_chunk$set(par = TRUE)
 
