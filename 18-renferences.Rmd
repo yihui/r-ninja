@@ -2,7 +2,7 @@
 
 ```{r include=FALSE}
 knitr::write_bib(
-  .packages(),
+  c(.packages(), 'rmini'),
   'packages.bib'
 )
 ```
